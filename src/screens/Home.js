@@ -33,15 +33,14 @@ function Home({ navigation }) {
 
   return (
     <SafeAreaView>
-      <ScrollView style={{backgroundColor: "#ffcc66", height: windowHeight}}>
+      <ScrollView style={{height: windowHeight}}>
         <View style={{flex: 1,
-          backgroundColor: "#ffcc66",
           alignItems: "center",
           justifyContent: "center",
           }}
         >
         <View style={styles.container}>
-          <Text style={{ fontSize: 27, marginTop: 50, marginBottom: 10, fontWeight: "bold" }}>Event List</Text>
+          <Text style={{ fontSize: 27, marginTop: 50, marginBottom: 10, fontWeight: "bold", color:"#613DC1", fontStyle:'italic' }}>Event List</Text>
           {/* <Text>{JSON.stringify(events[0].Events[0])}</Text> */}
           {events[0].Events.map(event => {
             return (
@@ -49,9 +48,9 @@ function Home({ navigation }) {
               <EventCard event={event} key={event.id} />
               <TouchableHighlight
                 key={event.id}
-                style={{ ...styles.button, backgroundColor: '#5bc0de' }}
+                style={{ ...styles.button }}
                 onPress={() => goScanner(event.id)}>
-              <Text style={styles.textStyle}>Scanner</Text>
+              <Text style={styles.textStyle}>Scan for {event.title}</Text>
               </TouchableHighlight>
             </>
           )})}
@@ -65,19 +64,19 @@ function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffcc66",
     alignItems: "center",
     justifyContent: "center",
   },
   button: {
-    width: 100,
     backgroundColor: '#F194FF',
     borderRadius: 20,
     padding: 10,
+    marginTop: 10,
     elevation: 2,
+    backgroundColor: '#613DC1'
   },
   textStyle: {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
   }

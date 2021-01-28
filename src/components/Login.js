@@ -4,11 +4,6 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native'
 
 function Login ({navigation}) {
-  const defaultLogin = {
-    email: 'lala',
-    password: "lili"
-  }
-
   const [inputData, setInputData] = useState({
     email: '',
     password: '',

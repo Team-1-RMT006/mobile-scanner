@@ -10,9 +10,11 @@ import store from './src/store/index'
 import Home from "./src/screens/Home"
 import Scanner from "./src/screens/Scanner";
 import Visitors from './src/screens/Visitors'
+import { LogBox } from 'react-native';
 
 const  Stack = createStackNavigator();
 export default function App() {
+  LogBox.ignoreAllLogs(true)
   return (
     <Provider store={store}>
       <NavigationContainer>

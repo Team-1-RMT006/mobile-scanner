@@ -5,18 +5,14 @@ import { useDispatch } from 'react-redux';
 function EventCard(props) {
   const windowWidth = Dimensions.get('window').width;
   const dispatch = useDispatch();
-  
+  console.log(props.event);
   return (
     <>
-      <View style={{ borderWidth: 1, marginTop: 5,  width: (windowWidth - 60)}}>
-        <Text>{JSON.stringify(props.event.Events)}</Text>
+      <View style={{ borderWidth: 3, borderColor:"#613DC1", borderRadius: 20, justifyContent:'center', alignItems:'center', padding:10, marginTop:10,  width: (windowWidth - 60)}}>
         <View>
           <Text style={{ fontSize: 16 }}>{props.event.title}</Text>
           <Text style={{ fontSize: 10 }}>{props.event.date}</Text>
           <Text style={{ fontSize: 10 }}>{props.event.time}</Text>
-        </View>
-        <View style={{ marginTop: 30, marginBottom: 30 }}>
-          
         </View>
       </View>
     </>

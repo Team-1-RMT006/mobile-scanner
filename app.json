@@ -2,11 +2,12 @@
   "name": "mobile",
   "displayName": "mobile",
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "Creativent Scanner",
+    "slug": "creativent-scanner",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": ""
   }
 }

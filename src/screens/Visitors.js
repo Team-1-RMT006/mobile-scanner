@@ -33,21 +33,20 @@ function Visitors({ navigation }) {
   return (
     
     <SafeAreaView>
-      <ScrollView style={{backgroundColor: "#ffcc66", height: windowHeight}}>
+      <ScrollView style={{height: windowHeight}}>
         <View style={{flex: 1,
-          backgroundColor: "#ffcc66",
           alignItems: "center",
           justifyContent: "center",
           }}
         >
           <View style={{ marginTop: 30, marginBottom: 30 }}>
             <TouchableHighlight
-              style={{ ...styles.button, backgroundColor: '#5bc0de' }}
+              style={{ ...styles.button }}
               onPress={() => goScanner()}>
             <Text style={styles.textStyle}>Scanner</Text>
             </TouchableHighlight>
           </View>
-
+          
           <View style={styles.container}>
             <Text style={{ fontSize: 27, marginTop: 50, marginBottom: 10, fontWeight: "bold" }}>Visitors</Text>
             <Table tickets={tickets}/>
@@ -62,19 +61,18 @@ function Visitors({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffcc66",
     alignItems: "center",
     justifyContent: "center",
   },
   button: {
     width: 100,
-    backgroundColor: '#F194FF',
+    backgroundColor: '#613DC1',
     borderRadius: 20,
     padding: 10,
     elevation: 2,
   },
   textStyle: {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
   }

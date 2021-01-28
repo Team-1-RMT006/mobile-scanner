@@ -52,36 +52,63 @@ function Scanner({navigation}) {
   }
   return (
     <View style={{flex:1}}>
-      <View style={{justifyContent: "center", alignItems:"center", marginTop:40}}>
-        <Text style={{fontSize:30, fontWeight:"bold", fontStyle:"italic"}}>Creativent Scanner</Text>
+      <View style={{justifyContent: "center", alignItems:"center", marginTop:40, color:"#613DC1"}}>
+        <Text style={{fontSize:30, fontWeight:"bold", fontStyle:"italic", color:"#613DC1"}}>Creativent Scanner</Text>
       </View>
-      <View style={{flex:2, marginVertical:20}}>
+
+      <View style={{flex:3, marginVertical:20}}>
         <BarCodeScanner
             onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
             style={StyleSheet.absoluteFillObject}
           />
       </View>
-      <View style={{justifyContent: "center", alignItems:"center", marginBottom:20}}>
-        {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-      </View>
-      
-      <TouchableOpacity
-          style={{alignItems:"center", backgroundColor: "#DDDDDD", padding: 10, backgroundColor:"#613DC1"}}
-          onPress={()=>{
-            goVisitors();
-          }}
-        >
-          <Text style={{color:"white", fontWeight:"bold"}}>Visitors List</Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity
-          style={{alignItems:"center", backgroundColor: "#DDDDDD", padding: 10, backgroundColor:"#613DC1"}}
-          onPress={()=>{
-            handleLogout();
-          }}
-        >
-          <Text style={{color:"white", fontWeight:"bold"}}>Logout</Text>
-      </TouchableOpacity>
+      <View style={{justifyContent: "center", alignItems:"center", marginBottom:20}}>
+        {
+          scanned && <TouchableOpacity style={
+            {
+              backgroundColor:"#613DC1",
+              paddingVertical: 10,
+              paddingHorizontal: 30,
+              borderRadius: 30
+            }
+          } 
+            onPress={() => setScanned(false)
+          }>
+            <Text style={{color:"white", fontWeight:"bold"}}>Tap to Scan Again</Text>
+          </TouchableOpacity>
+        }
+      </View>
+
+      <View style={{flexDirection: 'row', alignItems:'center', paddingHorizontal:5, justifyContent:'space-evenly'}}>
+        
+        <TouchableOpacity
+            style={{justifyContent:"center", backgroundColor:"#613DC1", height:"25%", padding:30, borderRadius:30}}
+            onPress={()=>{
+              navigation.replace('Home');
+            }}
+          >
+            <Text style={{color:"white", fontWeight:"bold"}}>Home</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+            style={{justifyContent:"center", backgroundColor:"#613DC1", height:"25%", padding:30, borderRadius:30}}
+            onPress={()=>{
+              goVisitors();
+            }}
+          >
+            <Text style={{color:"white", fontWeight:"bold"}}>Visitors List</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+            style={{justifyContent:"center", backgroundColor:"#613DC1", height:"25%", padding:30, borderRadius:30}}
+            onPress={()=>{
+              handleLogout();
+            }}
+          >
+            <Text style={{color:"white", fontWeight:"bold"}}>Logout</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
