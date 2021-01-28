@@ -8,11 +8,11 @@ function EventCard(props) {
   console.log(props.event);
   return (
     <>
-      <View style={{ borderWidth: 3, borderColor:"#613DC1", borderRadius: 20, justifyContent:'center', alignItems:'center', padding:10, marginTop:10,  width: (windowWidth - 60)}}>
+      <View style={{ borderWidth: 3, borderColor:"#613DC1", borderRadius: 20, textAlign:"center", justifyContent:'center', alignItems:'center', padding:10, marginTop:10,  width: (windowWidth - 60)}}>
         <View>
-          <Text style={{ fontSize: 16 }}>{props.event.title}</Text>
-          <Text style={{ fontSize: 10 }}>{props.event.date}</Text>
-          <Text style={{ fontSize: 10 }}>{props.event.time}</Text>
+          <Text style={{ fontSize: 16, fontStyle:"italic", fontWeight:"bold"}}>{props.event.title}</Text>
+          <Text style={{ fontSize: 10, textAlign:"center" }}>{props.event.date}</Text>
+          <Text style={{ fontSize: 10, textAlign:"center" }}>{props.event.time}</Text>
         </View>
       </View>
     </>

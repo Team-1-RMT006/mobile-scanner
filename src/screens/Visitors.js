@@ -39,16 +39,16 @@ function Visitors({ navigation }) {
           justifyContent: "center",
           }}
         >
-          <View style={{ marginTop: 30, marginBottom: 30 }}>
+          <View style={{ marginTop: 30 }}>
             <TouchableHighlight
               style={{ ...styles.button }}
               onPress={() => goScanner()}>
             <Text style={styles.textStyle}>Scanner</Text>
             </TouchableHighlight>
           </View>
-          
+
           <View style={styles.container}>
-            <Text style={{ fontSize: 27, marginTop: 50, marginBottom: 10, fontWeight: "bold" }}>Visitors</Text>
+            <Text style={{ fontSize: 27, marginTop: 30, marginBottom: 10, fontWeight: "bold", fontStyle: "italic", color: "#613DC1"}}>Attendance</Text>
             <Table tickets={tickets}/>
           </View>
         </View>
